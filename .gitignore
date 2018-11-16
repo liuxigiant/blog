@@ -1,0 +1,6 @@
+public/
+db.json
+.vscode
+.idea/
+.deploy_git/
+node_modules/
