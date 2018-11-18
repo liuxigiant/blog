@@ -73,7 +73,7 @@ hexo相关命令：
 
 ```
 new_post_name: :year-:month-:day-:title.md # File name of new posts
-```	
+```
 
 ### 3.2 博客文章的链接
 
