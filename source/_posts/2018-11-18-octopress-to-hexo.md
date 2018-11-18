@@ -1,5 +1,5 @@
 ---
-title: "octopress迁移到hexo"
+title: "Octopress迁移到Hexo"
 catalog: true
 date: 2018-11-18 18:51:06
 subtitle:
