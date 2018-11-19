@@ -10,9 +10,9 @@ tags:
 
 ## 1 起因
 
-某次上网查找问题，找到一个个人博客的文章，偶然发现这也是一个静态博客，用hexo生成挂到了github pages上
-
-后面上网搜了下hexo相关的文章，发现Hexo搭建的博客整体样式比Octopress好看很多，受众和文档也比较多
+某次上网查找问题，找到一篇文章，发现也是一个静态的个人博客，用Hexo生成挂到了Github Pages上。
+	
+后面上网搜了下Hexo相关的文章，发现Hexo搭建的博客整体样式比Octopress好看很多，受众和文档也比较多。
 
 然后开始折腾把Octopress迁移到Hexo
 
@@ -27,19 +27,19 @@ tags:
 
 ### 2.2 基础命令安装
 
-主要需要安装一下三种命令：
+主要需要安装以下三个命令：
 
-- npm: 前端开发应该很熟悉，搜索下node安装即可
-- git: 这里主要是提到构建好的博客到GitHub Pages仓库的，主流版本管理工具，安装方式就不废话了
+- npm: 前端开发应该很熟悉，用于依赖管理，搜索下node安装即可
+- git: 用于将构建好的静态博客提交到GitHub Pages仓库的，主流版本管理工具，安装方式就不废话了
 - hexo: 用于构建、生成、发布静态博客，安装命令 npm install -g hexo-cli
 
 ### 2.3 初始化Hexo本地博客目录
 
-上面选择好的主题，从github上git clone到本地之后，就可以当作本地的博客的目录了
+上面选择好的主题，从Github上git clone到本地之后，就可以当作本地的博客目录了
 
-> 若不选择主题，直接搭建hexo本地博客目录，则需要执行hexo init初始化；
+> 若不选择主题，直接搭建Hexo本地博客目录，则需要执行hexo init初始化；
 > 
-> 而从github上clone下来的的已有的主题不需要初始化，按照主题的使用说明，**修改自己的配置**即可
+> 而从Github上clone下来的的已有的主题不需要初始化，按照主题的使用说明，**修改自己的配置**即可
 
 ### 2.4 迁移
 
@@ -49,7 +49,7 @@ tags:
 
 ### 2.5 构建静态博客
 
-其实和Octopress差不多，只不过在使用hexo命令生成静态博客之前，需要执行npm install 命令安装依赖
+其实和Octopress差不多，只不过在使用Hexo命令生成静态博客之前，需要执行npm install 命令安装依赖
 
 > 执行npm相关命令，可指定或配置国内镜像，例如：npm install --registry=https://registry.npm.taobao.org
 
@@ -58,8 +58,8 @@ hexo相关命令：
 - hexo new post-title ：新建文章
 - hexo clean ：清理本地构建临时文件
 - hexo generate ：生成静态文件
-- hexo server ：本地预览，可在浏览器查看生成的博客
-- hexo deploy ：发布到github pages 
+- hexo server ：本地预览，可在浏览器查看生成的博客 localhost:4000
+- hexo deploy ：发布到Github Pages 
 
 ## 3 问题
 
