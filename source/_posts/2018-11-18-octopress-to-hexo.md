@@ -92,8 +92,13 @@ permalink: blog/:year:month:day/:title.html
 
 后来当前主题也是从另外一个主题[beantech](https://github.com/YenYuHsuan/hexo-theme-beantech)的基础上修改的，找到一个issues [Toc feature seems not working](https://github.com/YenYuHsuan/hexo-theme-beantech/issues/19)，其解决方式如下：
 
+> open node_modules/hexo-toc/lib/filter.js under your project root directory and modify line 28 to 31 as follows
+
 ```
-open node_modules/hexo-toc/lib/filter.js under your project root directory and modify line 28 to 31 as follows
+$title.attr('id', id);
+// $title.children('a').remove();
+// $title.html( '<span id="' + id + '">' + $title.html() + '</span>' );
+// $title.removeAttr('id');
 ```
 
 至此，虽然解决了TOC链接失效的问题，但是开启音乐播放器配置，TOC仍然失效，目前只好关闭这个配置了（可关注主题作者关于音乐播放器的issue）
