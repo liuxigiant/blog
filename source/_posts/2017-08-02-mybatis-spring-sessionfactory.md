@@ -40,7 +40,7 @@ MyBatis-Spring 封装了`SqlSessionFactory`的创建过程，通过读取、解�
       <property name="dataSource" ref="dataSource" />
       <property name="configLocation" value="classpath:mybatis-configure.xml" />
 </bean>
-```  
+```
 
 ## 2.1 SqlSessionFactory对象创建
 

@@ -5,9 +5,9 @@ description: mybatis-spring使用SqlSessionTemplate提供数据库操作模板�
 date: 2017-08-14 14:28:44 +0800
 catalog: true
 categories:
-- MyBatisSpring
+- MyBatis Spring
 tags:
-- MyBatisSpring
+- MyBatis Spring
 ---
 
 在MyBatis中，可以使用`SqlSessionFactory`来创建`SqlSession`。一旦你获得一个 session 之后，你可以使用它来执行映射语句，提交或回滚连接，最后，当不再需要它的时候，你可以关闭 session。  
