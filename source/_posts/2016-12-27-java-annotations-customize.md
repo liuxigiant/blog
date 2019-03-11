@@ -54,7 +54,7 @@ public class CustAnnotationsService {
         System.out.println("do something ...");
     }
 }
-```  
+```
 
 ## 1.3 自定义注解的处理  
 
@@ -77,11 +77,11 @@ public class TestHandlerAnnotations {
         }
     }
 }
-```  
+```
 输出结果如下：
 ```
 method name = handler; schedule : scheduleName = sc1, cron = 0 0/30 * * * ?, desc = 
-```  
+```
 
 # 2 重复注解  
 

@@ -134,7 +134,7 @@ private XMLConfigBuilder(XPathParser parser, String environment, Properties prop
 	//持有XML文件解析工具类
 	this.parser = parser;
 }
-```  
+```
 
 
 初始化过程重点是以下两点：  
@@ -157,7 +157,7 @@ parsed = true;
 //从根节点configuration开始递归解析
 parseConfiguration(parser.evalNode("/configuration"));
 return configuration;
-```  
+```
 
 `XPathParser#evalNode`根据`XPath`读取`Document`对象，不做说明，重点看`parseConfiguration`方法，源码如下：  
 
@@ -179,7 +179,7 @@ try {
 } catch (Exception e) {
   throw new BuilderException("Error parsing SQL Mapper Configuration. Cause: " + e, e);
 }
-```  
+```
 
 如上源码，`parseConfiguration`方法清晰的罗列出了XML配置文件各个节点解析封装的流程，按照一般使用方式，重点关注别名解析、类型转换器解析、Mapper文件解析。  
 
@@ -218,7 +218,7 @@ private void typeAliasesElement(XNode parent) {
       }
     }
   }
-```  
+```
 
 - 别名注册其实就将别名和类型维护到Map中，方便在Mapper中直接使用别名来代替类型
 - 别名注册`TypeAliasRegistry`实例化时候会注册一些基本的类型对应的别名
@@ -265,7 +265,7 @@ private void typeHandlerElement(XNode parent) throws Exception {
 	  }
 	}
 }
-```  
+```
 
 - 类型转换器注册类`TypeHandlerRegistry`实例化时候会注册一些基本的类型转换
 - 默认情况下注册类型转换器到集合`Map<Type, Map<JdbcType, TypeHandler<?>>>`中需要java类型、jdbc类型。从`typeHandlerRegistry.register`的多个重载方法可看出：若没有java类型，则在转换器类上查找`MappedTypes`注解或者实现`TypeReference`接口，否则为null；若没有jdbc类型，则在类型转换器类上查找`MappedJdbcTypes`注解，否则为null。
@@ -282,7 +282,7 @@ Mybatis配置文件解析中，核心就是**Mapper文件解析**。Mapper文件
       <mapper resource="mappers/Order.xml"/>
       <mapper resource="mappers/User.xml"/>
 </mappers>
-```  
+```
 
 下面看看`mappers`节点解析的源码实现方式，重点只关注`resource`方式配置的解析方式：  
 
@@ -322,7 +322,7 @@ private void mapperElement(XNode parent) throws Exception {
       }
     }
   }
-```  
+```
 
 XMLMapperBuilder#parse方法源码如下：  
 
@@ -389,7 +389,7 @@ private void resultMapElements(List<XNode> list) throws Exception {
 	  }
 	}
 }
-```  
+```
 
 resultMap解析过程如下（可对照一个配置文件理解解析过程）：  
 
@@ -461,7 +461,7 @@ private ResultMapping buildResultMappingFromContext(XNode context, Class<?> resu
     //将获取的result节点的各个属性声明封装到元数据对象ResultMapping中
     return builderAssistant.buildResultMapping(resultType, property, column, javaTypeClass, jdbcTypeEnum, nestedSelect, nestedResultMap, notNullColumn, columnPrefix, typeHandlerClass, flags, resulSet, foreignColumn);
   }
-```  
+```
 
 ### 2.6.2 公用sql代码块解析  
 
@@ -483,7 +483,7 @@ private void sqlElement(List<XNode> list, String requiredDatabaseId) throws Exce
       if (databaseIdMatchesCurrent(id, databaseId, requiredDatabaseId)) sqlFragments.put(id, context);
     }
   }
-```  
+```
 
 ### 2.6.3 sql语句解析  
 
@@ -509,7 +509,7 @@ private void buildStatementFromContext(List<XNode> list, String requiredDatabase
       }
     }
   }
-```  
+```
 
 下面是具体的sql解析过程：  
 
@@ -562,7 +562,7 @@ A：最好使用命名空间加id的方式
 
 `Configuration`中的sql语句元数据是以map维护的，`StrictMap`是一个自定义的map  
 
-`Map<String, MappedStatement> mappedStatements = new StrictMap<MappedStatement>("Mapped Statements collection")`   
+`Map<String, MappedStatement> mappedStatements = new StrictMap<MappedStatement>("Mapped Statements collection")`
 
 map的键是sql语句的id加上命名空间（applyCurrentNamespace），StrictMap在put时候，先根据整个字符串put一遍，再截取最后一个**.**之后的字符串作为键，再put一遍。  
 

@@ -77,7 +77,7 @@ mysql> CREATE TABLE t3 (
     -> PARTITIONS 4;
 ERROR 1491 (HY000): A PRIMARY KEY must include all columns in the table's partitioning function  
 
-```  
+```
   
 下面给出正确的示例做对比：  
   
@@ -115,7 +115,7 @@ mysql> CREATE TABLE t3 (
     -> PARTITIONS 4;
 Query OK, 0 rows affected (0.05 sec)  
 
-```  
+```
 
 - 分区表达中包含的列不是每一个唯一键的一部分，这条规则强调`每一个`
 
@@ -131,7 +131,7 @@ CREATE TABLE t4 (
     UNIQUE KEY (col2, col4)
 );  
 
-```  
+```
 
 - 若分区表中没有唯一键（包括主键），那么则对分区字段没有限制，只要分区字段的值和分区类型兼容即可
   若给一个没有唯一键的分区表添加主键（通过 alter table语句），那么添加的唯一键与分区键之间同样有上述限制  
@@ -170,4 +170,4 @@ Records: 0  Duplicates: 0  Warnings: 0
 mysql> ALTER TABLE t_no_pk ADD PRIMARY KEY(c2);
 ERROR 1503 (HY000): A PRIMARY KEY must include all columns in the table's partitioning function  
 
-```  
+```

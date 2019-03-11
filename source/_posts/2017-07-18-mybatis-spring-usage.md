@@ -90,7 +90,7 @@ public class OrderDaoImpl implements OrderDao {
 		this.sqlSessionTemplate = sqlSessionTemplate;
 	}
 }
-```  
+```
 
 配置文件`spring-config-dao-template.xml`中声明了`sqlSessionTemplate`,并将上上面配置的`sqlSessionFactory`注入到`sqlSessionTemplate`中，再将`sqlSessionTemplate`注入到`orderDaoImpl`中  
 
@@ -112,7 +112,7 @@ public class OrderDaoImpl implements OrderDao {
        </bean>
 
 </beans>
-```  
+```
 
 **总结：**  
 
@@ -129,7 +129,7 @@ public interface UserDao {
 
 	User searchUserById(Long userId);
 }
-```  
+```
 
 通过配置生成对应Dao的实现类  
 
@@ -153,7 +153,7 @@ public interface UserDao {
        </bean>
 
 </beans>
-```  
+```
 
 **总结：**  
 
@@ -185,7 +185,7 @@ public interface UserDao {
               <property name="basePackage" value="name.liux.share.dao" />
        </bean>
 </beans>
-```  
+```
 
 **总结：**  
 
@@ -215,7 +215,7 @@ public interface UserDao {
 
        <mybatis:scan base-package="name.liux.share.dao" />
 </beans>
-```  
+```
 
 ## 2.6 总结  
 

@@ -51,7 +51,7 @@ tags:
 		col2 = VALUES (col2),
 		col3 = VALUES (col3)
 </insert>
-```  
+```
 
 >其实对于单行数据`on duplicate key update`也可以和批量数据保存一样使用`VALUES`表达式（`VALUES`指向新数据）。  
 

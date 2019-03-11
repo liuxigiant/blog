@@ -21,7 +21,7 @@ tags:
 
 下面从源码角度了解下`SqlSessionTemplate`对`SqlSession`的管理以及与Spring事务的集成。  
 
-# 1 配置  
+# 1 配置
 
 先回顾下`SqlSessionTemplate`在Spring配置中的声明方式，如下：  
 
@@ -29,9 +29,9 @@ tags:
 <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
       <constructor-arg index="0" ref="sqlSessionFactory" />
 </bean>
-```  
+```
 
-# 2 构造方法  
+# 2 构造方法
 
 如上配置，通过构造方法把`sqlSessionFactory`注入到`SqlSessionTemplate`中，下面看看构造方法源码：  
 
@@ -60,9 +60,9 @@ public SqlSessionTemplate(SqlSessionFactory sqlSessionFactory, ExecutorType exec
 	    new Class[] { SqlSession.class },
 	    new SqlSessionInterceptor());
 }
-```  
+```
 
-# 3 常用方法  
+# 3 常用方法
 
 使用MyBatis框架就是为了方法操作数据库，`SqlSessionTemplate`通过实现`SqlSession`接口，暴露了丰富的数据库操作API，下面看看在`SqlSessionTemplate`类中这些方法的实现方式：  
 
@@ -85,7 +85,7 @@ public void close() {
 }
 ```
 
-# 4 回调拦截器SqlSessionInterceptor  
+# 4 回调拦截器SqlSessionInterceptor
 
 
 从`SqlSessionTemplate`的构造方法和数据库操作方法可看出，`SqlSessionTemplate`是Mybatis Spring提供的一个数据库操作**模板类**，具体数据库操作由`SqlSession`**代理类**完成，代理类的创建随`SqlSessionTemplate`对象的创建而创建，而对Mybatis SqlSession的管理，是由作代理类的回调拦截器`SqlSessionInterceptor`完成的。  
@@ -145,7 +145,7 @@ private class SqlSessionInterceptor implements InvocationHandler {
       }
     }
   }
-```  
+```
 
 # 5 事务管理  
 

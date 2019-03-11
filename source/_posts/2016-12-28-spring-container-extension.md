@@ -152,7 +152,7 @@ public class BeanPostProcessorService implements BeanPostProcessor {
     }
 }
 
-```  
+```
 
 ## 2.2 BeanFactoryPostProcessor接口  
 
@@ -205,7 +205,7 @@ jdbc.driverClassName=org.hsqldb.jdbcDriver
 jdbc.url=jdbc:hsqldb:hsql://production:9002
 jdbc.username=sa
 jdbc.password=root
-```  
+```
 
 `PropertyPlaceholderConfigurer`不仅支持属性配置文件的读取，也支持读取系统属性。通过`systemPropertiesMode`属性值可配置读取优先级。各种取值说明如下：  
 
@@ -263,7 +263,7 @@ Spring XML配置文件配置用户类，并给用户名属性`userName`注入值
 <bean id="user" class="name.liuxi.spring.ext.UserBean">
       <property name="userName" value="haha"/>
 </bean>
-```  
+```
 
 下面是自定义的bean factory后处理器，修改属性`userName`的值为`heihei`  
 
